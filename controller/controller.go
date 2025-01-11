@@ -3,9 +3,9 @@ package controller
 import (
 	"github.com/listenGrey/lucianagRpcPKG/ask"
 	"google.golang.org/grpc"
-	"lucianaLLMServer/conf"
 	service "lucianaLLMServer/grpc"
 	"net"
+	"os"
 )
 
 func Response() error {
@@ -13,7 +13,7 @@ func Response() error {
 	if err != nil {
 		return err
 	}*/
-	listen, err := net.Listen("tcp", conf.GrpcServerAddress) //local ip and port
+	listen, err := net.Listen("tcp", ":"+os.Getenv("LLMS_PORT")) //local ip and port
 	if err != nil {
 		return err
 	}

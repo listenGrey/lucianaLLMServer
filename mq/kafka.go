@@ -4,8 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
+
 	"github.com/segmentio/kafka-go"
-	"lucianaLLMServer/conf"
 	"lucianaLLMServer/model"
 )
 
@@ -13,7 +14,7 @@ func PromptQueue(cid int64, qa *model.QA) error {
 	ctx := context.Background()
 	// 创建 Kafka 生产者
 	writer := &kafka.Writer{
-		Addr:  kafka.TCP(conf.KafkaAddress),
+		Addr:  kafka.TCP(os.Getenv("KAFKA_ADDR") + ":" + os.Getenv("KAFKA_PORT")),
 		Topic: "sendqa",
 		//Balancer:               &kafka.Hash{},
 		//WriteTimeout:           1 * time.Second,

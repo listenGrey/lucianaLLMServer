@@ -11,5 +11,4 @@ func main() {
 	if err != nil {
 		fmt.Printf("生成对话服务挂掉了, %s\n", err)
 	}
-
 }

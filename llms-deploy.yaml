@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llms
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: llms
+  template:
+    metadata:
+      labels:
+        app: llms
+    spec:
+      containers:
+        - name: user
+          image: listengrey/luciana-llms:latest
+          envFrom:
+            - configMapRef:
+                name: luciana-conf
+          ports:
+            - containerPort: 8080

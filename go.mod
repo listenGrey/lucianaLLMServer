@@ -6,7 +6,7 @@ require (
 	github.com/dlclark/regexp2 v1.10.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/klauspost/compress v1.17.2 // indirect
-	github.com/listenGrey/lucianagRpcPKG v0.0.9 // indirect
+	github.com/listenGrey/lucianagRpcPKG v0.1.0 // indirect
 	github.com/pierrec/lz4/v4 v4.1.15 // indirect
 	github.com/pkoukk/tiktoken-go v0.1.6 // indirect
 	github.com/segmentio/kafka-go v0.4.47 // indirect
